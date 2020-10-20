@@ -38,4 +38,12 @@ router.delete('/', async (req, res) => {
 	res.json({ status: 200, msg: 'item deleted', data: cookbook })
 })
 
+router.put('/:id', async (req, res) => {
+	res.json(await Cookbook.findByIdAndUpdate(req.params.id, req.body, { new: true }))
+})
+
+router.delete('/:id', async (req, res) => {
+	res.json(await Cookbook.findByIdAndRemove(req.params.id))
+})
+
 module.exports = router;

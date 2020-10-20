@@ -34,6 +34,14 @@ router.put('/cookbook', async (req, res) => {
 	)
 	res.json({ status: 200, msg: 'item updated', data: author })
 })
+
+router.delete('/:id', async (req, res) => {
+	res.json(await Author.findByIdAndRemove(req.params.id))
+})
+
+router.put('/:id', async (req, res) => {
+	res.json(await Author.findByIdAndUpdate(req.params.id, req.body, { new: true }))
+})
 // Bonus: Write the route to delete cookbooks by author name. (hint: There are a couple on different ways to do this and you may have to change/add code in other files)
 
 
