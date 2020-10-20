@@ -26,17 +26,17 @@ router.post('/', async (req, res) => {
 	res.json({ status: 200, data: cookbook })
 })
 // Write the route to update a cookbook
-router.put('/', async (req, res) => {
-	const cookbook = await Cookbook.findOneAndUpdate({title: "made in india"}, {yearPublished: 2020})
-	res.json({ status: 200, msg: 'item updated', data: cookbook })
-})
+// router.put('/', async (req, res) => {
+// 	const cookbook = await Cookbook.findOneAndUpdate({title: "made in india"}, {yearPublished: 2020})
+// 	res.json({ status: 200, msg: 'item updated', data: cookbook })
+// })
 // Write the route to delete the cookbook by title
-router.delete('/', async (req, res) => {
-	const cookbook = await Cookbook.findOneAndDelete(
-		{ title: 'made in india' }
-	)
-	res.json({ status: 200, msg: 'item deleted', data: cookbook })
-})
+// router.delete('/', async (req, res) => {
+// 	const cookbook = await Cookbook.findOneAndDelete(
+// 		{ title: 'made in india' }
+// 	)
+// 	res.json({ status: 200, msg: 'item deleted', data: cookbook })
+// })
 
 router.put('/:id', async (req, res) => {
 	res.json(await Cookbook.findByIdAndUpdate(req.params.id, req.body, { new: true }))
