@@ -1,5 +1,5 @@
 //Import connection
-const mongoose = require('../backend/db/connection')
+const mongoose = require('../db/connection')
 const Schema = mongoose.Schema
 
 const authorSchema = new Schema(

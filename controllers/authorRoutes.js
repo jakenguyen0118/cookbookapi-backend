@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 
 const mongoose = require('../db/connection')
-const Author = require('../../models/Author')
+const Author = require('../models/Author')
 
 // Write the route to list all authors
 router.get('/', async (req, res) => {

@@ -3,7 +3,7 @@ const router = express.Router()
 
 // Require the Cookbook controller.
 const mongoose = require('../db/connection')
-const Cookbook = require('../../models/Cookbook')
+const Cookbook = require('../models/Cookbook')
 
 // Write the route to list all cookbooks
 router.get('/', async (req, res) => {
